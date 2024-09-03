@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycompany.miniproject.dao.myb atis.Ch13BoardDao">
+	<insert id="insert" parameterType="Board">
+		insert into board (
+			bno, btitle, bcontent, bdate, mid, bhitcount, 
+			battachoname, battachsname, battachtype, battachdata
+		) values (
+			seq_bno.nextval, #{btitle}, #{bcontent}, sysdate, #{mid}, 0,
+			#{battachoname}, #{battachsname}, #{battachtype}, #{battachdata}
+		)
+	</insert>
+</mapper>
