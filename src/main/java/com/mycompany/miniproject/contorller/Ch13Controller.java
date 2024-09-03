@@ -36,23 +36,19 @@ public class Ch13Controller {
 		Ch13Board board = new Ch13Board();
 		board.setBtitle(form.getBtitle());
 		board.setBcontent(form.getBcontent());
-		board.setMid("user");
-		MultipartFile battach = form.getBattach();
+		board.setMid("hoi");
+		MultipartFile battach= form.getBattach();
+		
 		if(!battach.isEmpty()) {
 			board.setBattachoname(battach.getOriginalFilename());
 			board.setBattachtype(battach.getContentType());
-			
-			String fileName = new Date().getTime() + "-" + battach.getOriginalFilename();
+			String fileName = new Date().getTime() + "-" +battach.getOriginalFilename();
 			board.setBattachsname(fileName);
-			
 			String saveDir = "C:/2024-oti/workspace-spring/uploadfiles";
 			File file = new File(saveDir, fileName);
 			battach.transferTo(file);
-			
-			
 		}
 		boardService.writeBoard(board);
 		return "redirect:/";
-		
 	}
 }
