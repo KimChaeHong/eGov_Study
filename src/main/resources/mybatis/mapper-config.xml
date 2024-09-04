@@ -8,6 +8,8 @@
 	<typeAliases>
 		<typeAlias type="com.mycompany.miniproject.dto.Ch13Board"
 				   alias="Board"/>
+		<typeAlias type="com.mycompany.miniproject.dto.Ch13Pager"
+				   alias="Pager"/>
 	</typeAliases>
 
 </configuration>
